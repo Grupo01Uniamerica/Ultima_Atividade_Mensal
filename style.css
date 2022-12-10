@@ -36,7 +36,6 @@ li{
 }
 li:hover{
     color: #9305F2;
-    transition: all 0.5s;
     transform: scale(1.3);
 }
 #logo:hover{
@@ -48,7 +47,7 @@ li:hover{
 }
 .lateral{
     background-color: #494949;
-    height: 100rem;
+    height: 180vh;
     width: 15%;
     display: flex;
     justify-content: center;
@@ -60,6 +59,7 @@ li:hover{
     list-style: none;
     font-size: larger;
     font-family: sans-serif;
+    margin-top: 18vh;
 
 }
 footer{
@@ -68,8 +68,73 @@ footer{
 }
 #margem{
     margin: 6vh;
+    margin-top: 7.5vh;
 }
 button{
     position: relative;
     top: 50%;
+}
+
+#homeIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 84vh;
+    right: 5%;
+}
+
+#sportsIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 77.3vh;
+    right: 5%;
+}
+
+#mmoIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 76.3vh;
+    right: 5%;
+}
+
+#mobaIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 61vh;
+    right: 5%;
+}
+
+#cardIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 60vh;
+    right: 5%;
+}
+
+#fightIMG{
+    width: 2.3vw;
+    display: flex;
+    position: relative;
+    bottom: 54.5vh;
+    right: 5%;
+}
+
+#fpsIMG{
+    width: 2.35vw;
+    display: flex;
+    position: relative;
+    bottom: 48.5vh;
+    right: 5%;
+}
+
+#carroIMG{
+    width: 2.5vw;
+    display: flex;
+    position: relative;
+    bottom: 43.3vh;
+    right: 5%;
 }
