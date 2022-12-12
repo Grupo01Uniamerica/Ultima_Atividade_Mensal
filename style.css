@@ -240,7 +240,7 @@ button:hover {
 
 #destq{
 
-font-size: 2rem;
+font-size: 4rem;
 position: relative;
 color: white;
 font-weight: bold;
@@ -248,7 +248,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 right: 26%;
-top: 7%;
+top: 2%;
 
 
 
@@ -257,7 +257,7 @@ top: 7%;
 
     position: relative;
     
-    height: 120vh;
+    height: 130vh;
     width: 84vw;
     margin: 0;
     padding: 0;
@@ -326,14 +326,14 @@ width: 95%;
 
 position: relative;
 color:white;
-bottom: 5%;
+bottom: 2%;
 left: 5%;
 }
 
 #fav{
 
 position: relative;
-bottom: 25%;
+bottom:18%;
 left: 83%;
 
 
