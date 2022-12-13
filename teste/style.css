@@ -35,7 +35,55 @@ aside ul li {
     margin: 10px;
 }
 
+a{
+
+    text-decoration: none;
+    color: black;
+
+}
+
 #home-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+
+#sports-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#mmo-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#moba-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#flex{
+
+    display: flex;
+
+}
+#card-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#fighting-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#shooting-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#racing-button img {
     width: 35px;
     margin-right: 5px;
 }
@@ -43,8 +91,11 @@ aside ul li {
 main section {
     background-color: violet;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
 }
+
+
 
 .tes:first-child {
     background-color: blue;
