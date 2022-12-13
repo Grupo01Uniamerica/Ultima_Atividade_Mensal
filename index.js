@@ -6,6 +6,8 @@ const options = {
 	}
 };
 
+let cards = document.getElementById('cards');
+
 function lerApi(){
 fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity', options)
 	.then(response => response.json())
@@ -14,27 +16,24 @@ fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popu
 
 }
 
-function banner(jogos){
+function banner(data){
 
     
     let article = document.createElement('article');
-    article.classNmae = "tes"
+    article.className = "tes"
     article.innerHTML = `
     
-    
+	<img src="${data[0].thumbnail}">
+	<h1>${data[0].title}</h1>
     
     `
 
-    imgss.appendChild(article);
+    cards.appendChild(article);
 
     
 
 }
 
-
-
-
-let imgss = document.getElementById('imagens');
 
 
 
