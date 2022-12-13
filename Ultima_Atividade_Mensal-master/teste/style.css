@@ -1,0 +1,118 @@
+:root {
+    --var-primarycolor: #494949;
+    --var-secondarycolor: #313131;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    background-color: var(--var-primarycolor);
+    align-items: center;
+}
+
+#logo {
+    width: 150px;
+    height: 100px;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    display: flex;
+    background-color: var(--var-primarycolor);
+    float: left;
+}
+
+aside ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+a{
+
+    text-decoration: none;
+    color: black;
+
+}
+
+#home-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+
+#sports-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#mmo-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#moba-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#flex{
+
+    display: flex;
+
+}
+#card-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#fighting-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#shooting-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+#racing-button img {
+    width: 35px;
+    margin-right: 5px;
+}
+
+main section {
+    background-color: violet;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+}
+
+
+
+.tes:first-child {
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.tes:nth-child(2), .tes:nth-child(3) {
+    background-color: red;
+}
+
+.tes {
+    background-color: yellow;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--var-secondarycolor);
+}
