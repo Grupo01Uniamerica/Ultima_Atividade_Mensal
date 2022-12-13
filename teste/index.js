@@ -26,7 +26,6 @@ browserButton.addEventListener('click',function(){choicedPlat("platform=browser&
 let allButton = document.getElementById('all-button');
 allButton.addEventListener('click',function(){choicedPlat("platform=all&")})
 
-let fav = document.getElementsById('fav'); //
 
 let homeButton = document.getElementById('home-button');
 homeButton.addEventListener('click', function(){choicedGenre("sort-by=popularity")});
@@ -104,7 +103,7 @@ function banner(data){
         <h1>${data[i].title}</h1> 
         </a>
         <a id="fav" key="${data[i].id}" href="#">
-        <p>☆</p>
+        <p id="estrela">☆</p>
         </a>
         </div>
         `

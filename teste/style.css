@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 header {
@@ -89,7 +90,7 @@ a{
 }
 
 main section {
-    background-color: violet;
+    background-color: #313131;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1vw;
@@ -98,13 +99,17 @@ main section {
 
 
 .tes:first-child {
-    background-color: blue;
+    width: 30vw;
+    color: white;
+    background-color:#494949 ;
     grid-column-start: 2;
     grid-column-end: 4;
 }
 
 .tes:nth-child(2), .tes:nth-child(3) {
-    background-color: red;
+    background-color: #494949;
+    padding: 1.5vw;
+    border-radius: 8px;
 }
 
 .tes {
@@ -115,4 +120,32 @@ footer {
     display: flex;
     justify-content: center;
     background-color: var(--var-secondarycolor);
+}
+
+#mais{
+    background-color: #494949;
+    border-radius: 8px;
+    padding-bottom: 2%;
+    color: white;
+}
+li:hover{
+    color: #9305F2;
+}
+p:hover{
+    color: #9305F2;
+}
+p{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12%;
+    font-size: 1.6vw;
+}
+
+h1{
+    color: white;
+}
+#estrela{
+    width: 3vw;
 }
