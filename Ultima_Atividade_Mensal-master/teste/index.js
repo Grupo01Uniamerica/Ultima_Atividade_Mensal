@@ -9,13 +9,18 @@ const options = {
 let cards = document.getElementById('cards');
 let counter = 0;
 let loadButton = document.getElementById('load-button');
+
 loadButton.addEventListener('click', lerApi);
+let jogos = {}
 this.array= [];
 this.numFav= localStorage.getItem("numFav");
+
 let choicedUrl = 'sort-by=popularity';
 let choicedPlataform = 'platform=all&';
 let choicedTeste = 'platform=all&sort-by=popularity'
 lerApi(choicedTeste);
+
+
 
 
 let pcButton = document.getElementById('pc-button');
@@ -27,7 +32,7 @@ browserButton.addEventListener('click',function(){choicedPlat("platform=browser&
 let allButton = document.getElementById('all-button');
 allButton.addEventListener('click',function(){choicedPlat("platform=all&")})
 
-let fav = document.getElementsById('fav'); //
+
 
 let homeButton = document.getElementById('home-button');
 homeButton.addEventListener('click', function(){choicedGenre("sort-by=popularity")});
@@ -90,13 +95,26 @@ fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTes
 	.catch(err => console.log(err));
 
 }
+
+function favoritar(i){
+
+
+    alert('bomdia' + i);
+    
+    adiciona_jogos(jogos);
+
+    localStorage.setItem("favoritos",JSON.stringify(array));
+
+}
+
 function adiciona_jogos(jogos){
+    adicionar();
     this.array.push(jogos);
     this.numFav++;
 }
- 
-function adicionar(){
-    let jogos = {}
+function adicionar(data){
+     jogos = {}
+     let i= idStar;
     jogos.id = data[i].id; 
     jogos.nome = data[i].title;
     jogos.url = data[i].freetogame_profile_url;
@@ -104,27 +122,23 @@ function adicionar(){
     
    
     return jogos;
+    
 }
 
-function favoritar(){
-
-    let meusFavs = [];
-
-    localStorage.setItem("favoritos",JSON.stringify(array));
-
-}
 
 function favoritos(){
 
         var arrayFavoritos = localStorage.getItem("favoritos");
-        Array = JSON.parse(arrayFavoritos);
+        array = JSON.parse(arrayFavoritos);
 
 }
 
 function banner(data){
+    
  
     for ( i = counter; i < counter + 10; i++){
         let article = document.createElement('article');
+        
         article.className = "tes"
         article.innerHTML = `  
         
@@ -134,17 +148,20 @@ function banner(data){
         <div id="flex">
         <h1>${data[i].title}</h1> 
         </a>
-        <a id="fav" key="${data[i].id}" href="#">
-        <p>☆</p>
-        </a>
+        <a class="star" id= ${i} onclick="favoritar(${i})">☆</a>
         </div>
         `
 
-
+       
         cards.appendChild(article);
+
     }
     counter+=10;
+
 }
+
+
+
 
 
 
