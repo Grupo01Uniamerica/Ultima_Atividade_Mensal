@@ -74,7 +74,7 @@ aside ul li {
 a{
 
     text-decoration: none;
-    color: black;
+    color: white;
 
 }
 
@@ -182,7 +182,6 @@ main section {
     left: 35%;
     background-color: #494949;
     padding: 1.5vw;
-    width: 85%;
     grid-column-start: 1;
     grid-column-end: 2;
     border-radius: 8px;
@@ -278,6 +277,7 @@ li{
 p:hover{
     color: #9305F2;
     cursor: pointer;
+    transition: all 0.5s;
 }
 p{
     color: white;
@@ -290,7 +290,6 @@ p{
 
 #estrela{
     width: 3vw;
-
 }
 
 #catfooter{
@@ -304,6 +303,7 @@ p{
     left: 18vw;
 }
 #contact_us{
+
     font-size: 2vh;
     position: relative;
     right: 4.5vw;
