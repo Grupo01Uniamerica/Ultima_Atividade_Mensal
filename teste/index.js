@@ -9,6 +9,8 @@ const options = {
 let cards = document.getElementById('cards');
 let counter = 0;
 
+this.array= [];
+this.numFav= localStorage.getItem("numFav");
 
 let choicedUrl = 'sort-by=popularity';
 let choicedPlataform = 'platform=all&';
@@ -87,6 +89,47 @@ fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTes
 	.catch(err => console.log(err));
 
 }
+function favoritar(i, data){
+
+
+    alert('bomdia' + i);
+
+    adicionar(data, i);
+    adiciona_jogos(jogos);
+
+    localStorage.setItem("favoritos",JSON.stringify(array));
+
+}
+
+function adiciona_jogos(jogos){
+   
+    this.array.push(jogos);
+    this.numFav++;
+
+
+    alert("jogo" + data[i].title);
+}
+function adicionar(i, data){
+     let jogos = {}
+    console.log(data);
+    jogos.id = i; 
+    jogos.nome = data[i].title;
+    jogos.url = data[i].freetogame_profile_url;
+    jogos.img = data[i].thumbnail; 
+    
+   
+    return jogos;
+    
+}
+
+
+function favoritos(){
+
+        var arrayFavoritos = localStorage.getItem("favoritos");
+        array = JSON.parse(arrayFavoritos);
+
+}
+
 
 function banner(data){
  
@@ -101,8 +144,7 @@ function banner(data){
         <div id="flex">
         <h1 id="txt${i}">${data[i].title}</h1> 
         </a>
-        <a id="fav" key="${data[i].id}" href="#">
-        <p id="estrela">☆</p>
+        <a class="estrela" id= ${i} onclick="favoritar(${i})">☆</a>
         </a>
         </div>
         `
