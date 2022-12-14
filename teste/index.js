@@ -8,8 +8,7 @@ const options = {
 
 let cards = document.getElementById('cards');
 let counter = 0;
-let loadButton = document.getElementById('load-button');
-loadButton.addEventListener('click', lerApi);
+
 
 let choicedUrl = 'sort-by=popularity';
 let choicedPlataform = 'platform=all&';
@@ -98,9 +97,9 @@ function banner(data){
         
         
         <a  href=${data[i].freetogame_profile_url} target="_blank">
-        <img src="${data[i].thumbnail}">
+        <img id="img${i}"src="${data[i].thumbnail}">
         <div id="flex">
-        <h1>${data[i].title}</h1> 
+        <h1 id="txt${i}">${data[i].title}</h1> 
         </a>
         <a id="fav" key="${data[i].id}" href="#">
         <p id="estrela">☆</p>
