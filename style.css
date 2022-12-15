@@ -22,7 +22,7 @@ background-color:var(--var-secondarycolor);
 }
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     font-family: 'Poppins';
 }
 
@@ -96,6 +96,97 @@ a{
     width: 35px;
     margin-right: 5px;
 }
+
+
+
+
+#ret1{
+
+    width: 100%;
+    
+
+}
+
+#ret2{
+
+    width: 100%;
+    
+
+}
+
+#ret3{
+
+    width: 100%;
+    
+
+}
+
+#ret4{
+
+    width: 100%;
+    
+
+}
+
+#ret5{
+
+    width: 100%;
+   
+
+}
+
+#ret6{
+
+    width: 100%;
+    
+
+}
+
+#ret7{
+
+    width: 100%;
+    
+
+}
+
+#ret8{
+
+    width: 100%;
+    
+
+}
+
+#ret9{
+
+    width: 19%;
+    
+
+}
+
+#ret10{
+
+    width: 19%;
+    
+
+}
+
+#ret11{
+
+    width: 19%;
+    
+
+}
+
+#ret12{
+
+    width: 15%;
+    
+
+}
+
+
+
+
 
 
 #sports-button img {
@@ -374,6 +465,13 @@ p{
 .stars{
     
     color:#9305F2;
+
+}
+
+#tema{
+
+    position: relative;
+    left: 5%;
 
 }
 

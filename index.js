@@ -30,16 +30,56 @@ lerApi(choicedTeste);
 
 
 let pcButton = document.getElementById('pc-button');
-pcButton.addEventListener('click',function(){choicedPlat("platform=pc&")})
+pcButton.addEventListener('click',function(){ if(temabranco == 0){ret9.style.backgroundColor = "#313131";
+                                            ret10.style.backgroundColor = "#494949";
+                                            ret11.style.backgroundColor = "#494949";
+                                            ret12.style.backgroundColor = "#494949";
+                                            } else {
+                                            ret9.style.backgroundColor = "#9146FF";
+                                            ret10.style.backgroundColor = "#E5E5E5";
+                                            ret11.style.backgroundColor = "#E5E5E5";
+                                            ret12.style.backgroundColor = "#E5E5E5";
+                                            }
+                                            choicedPlat("platform=pc&")})
 
 let browserButton = document.getElementById('browser-button');
-browserButton.addEventListener('click',function(){choicedPlat("platform=browser&")})
+browserButton.addEventListener('click',function(){if(temabranco == 0){ret9.style.backgroundColor = "#494949";
+                                                    ret10.style.backgroundColor = "#313131";
+                                                    ret11.style.backgroundColor = "#494949";
+                                                    ret12.style.backgroundColor = "#494949";
+                                                    } else {
+                                                    ret9.style.backgroundColor = "#E5E5E5";
+                                                    ret10.style.backgroundColor = "#9146FF";
+                                                    ret11.style.backgroundColor = "#E5E5E5";
+                                                    ret12.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                choicedPlat("platform=browser&")})
 
 let allButton = document.getElementById('all-button');
-allButton.addEventListener('click',function(){choicedPlat("platform=all&")})
+allButton.addEventListener('click',function(){if(temabranco == 0){ret9.style.backgroundColor = "#494949";
+                                                ret10.style.backgroundColor = "#494949";
+                                                ret11.style.backgroundColor = "#313131";
+                                                ret12.style.backgroundColor = "#494949";
+                                                } else {
+                                                ret9.style.backgroundColor = "#E5E5E5";
+                                                ret10.style.backgroundColor = "#E5E5E5";
+                                                ret11.style.backgroundColor = "#9146FF";
+                                                ret12.style.backgroundColor = "#E5E5E5";
+                                                }
+                                            choicedPlat("platform=all&")})
 
 let favbutton = document.getElementById('fav-button');
-favbutton.addEventListener('click',function(){favoritados()});
+favbutton.addEventListener('click',function(){if(temabranco == 0){ret9.style.backgroundColor = "#494949";
+                                                ret10.style.backgroundColor = "#494949";
+                                                ret11.style.backgroundColor = "#494949";
+                                                ret12.style.backgroundColor = "#313131";
+                                                } else {
+                                                ret9.style.backgroundColor = "#E5E5E5";
+                                                ret10.style.backgroundColor = "#E5E5E5";
+                                                ret11.style.backgroundColor = "#E5E5E5";
+                                                ret12.style.backgroundColor = "#9146FF";
+                                                }
+                                            favoritados()});
 
 let tema = document.getElementById('tema');
 tema.addEventListener('click', function(){mudaTema()});
@@ -47,28 +87,172 @@ tema.addEventListener('click', function(){mudaTema()});
 
 
 let homeButton = document.getElementById('home-button');
-homeButton.addEventListener('click', function(){choicedGenre("sort-by=popularity")});
+homeButton.addEventListener('click', function(){ if(temabranco == 0){ret1.style.backgroundColor = "#313131";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#494949";
+                                                    ret4.style.backgroundColor = "#494949";
+                                                    ret5.style.backgroundColor = "#494949";
+                                                    ret6.style.backgroundColor = "#494949";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#494949";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#9146FF";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#E5E5E5";
+                                                    ret4.style.backgroundColor = "#E5E5E5";
+                                                    ret5.style.backgroundColor = "#E5E5E5";
+                                                    ret6.style.backgroundColor = "#E5E5E5";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                    choicedGenre("sort-by=popularity")});
 
 let sportsButton = document.getElementById('sports-button');
-sportsButton.addEventListener('click', function(){choicedGenre("category=sports")});
+sportsButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                        ret2.style.backgroundColor = "#313131";
+                                                        ret3.style.backgroundColor = "#494949";
+                                                        ret4.style.backgroundColor = "#494949";
+                                                        ret5.style.backgroundColor = "#494949";
+                                                        ret6.style.backgroundColor = "#494949";
+                                                        ret7.style.backgroundColor = "#494949";
+                                                        ret8.style.backgroundColor = "#494949";
+                                                        } else{
+                                                        ret1.style.backgroundColor = "#E5E5E5";
+                                                        ret2.style.backgroundColor = "#9146FF";
+                                                        ret3.style.backgroundColor = "#E5E5E5";
+                                                        ret4.style.backgroundColor = "#E5E5E5";
+                                                        ret5.style.backgroundColor = "#E5E5E5";
+                                                        ret6.style.backgroundColor = "#E5E5E5";
+                                                        ret7.style.backgroundColor = "#E5E5E5";
+                                                        ret8.style.backgroundColor = "#E5E5E5";
+                                                        }
+                                                    choicedGenre("category=sports")});
 
 let mmoButton = document.getElementById('mmo-button');
-mmoButton.addEventListener('click', function(){choicedGenre("category=mmorpg")});
+mmoButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#313131";
+                                                    ret4.style.backgroundColor = "#494949";
+                                                    ret5.style.backgroundColor = "#494949";
+                                                    ret6.style.backgroundColor = "#494949";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#494949";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#E5E5E5";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#9146FF";
+                                                    ret4.style.backgroundColor = "#E5E5E5";
+                                                    ret5.style.backgroundColor = "#E5E5E5";
+                                                    ret6.style.backgroundColor = "#E5E5E5";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                choicedGenre("category=mmorpg")});
 
 let mobaButton = document.getElementById('moba-button');
-mobaButton.addEventListener('click', function(){choicedGenre("category=moba")});
+mobaButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#494949";
+                                                    ret4.style.backgroundColor = "#313131";
+                                                    ret5.style.backgroundColor = "#494949";
+                                                    ret6.style.backgroundColor = "#494949";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#494949";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#E5E5E5";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#E5E5E5";
+                                                    ret4.style.backgroundColor = "#9146FF";
+                                                    ret5.style.backgroundColor = "#E5E5E5";
+                                                    ret6.style.backgroundColor = "#E5E5E5";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                choicedGenre("category=moba")});
 
 let cardButton = document.getElementById('card-button');
-cardButton.addEventListener('click', function(){choicedGenre("category=card")});
+cardButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#494949";
+                                                    ret4.style.backgroundColor = "#494949";
+                                                    ret5.style.backgroundColor = "#313131";
+                                                    ret6.style.backgroundColor = "#494949";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#494949";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#E5E5E5";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#E5E5E5";
+                                                    ret4.style.backgroundColor = "#E5E5E5";
+                                                    ret5.style.backgroundColor = "#9146FF";
+                                                    ret6.style.backgroundColor = "#E5E5E5";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                choicedGenre("category=card")});
 
 let lutaButton = document.getElementById('fighting-button');
-lutaButton.addEventListener('click', function(){choicedGenre("category=fighting")});
+lutaButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#494949";
+                                                    ret4.style.backgroundColor = "#494949";
+                                                    ret5.style.backgroundColor = "#494949";
+                                                    ret6.style.backgroundColor = "#313131";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#494949";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#E5E5E5";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#E5E5E5";
+                                                    ret4.style.backgroundColor = "#E5E5E5";
+                                                    ret5.style.backgroundColor = "#E5E5E5";
+                                                    ret6.style.backgroundColor = "#9146FF";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#E5E5E5";
+                                                    }
+                                                choicedGenre("category=fighting")});
 
 let shootingButton = document.getElementById('shooting-button');
-shootingButton.addEventListener('click', function(){choicedGenre("category=shooter")});
+shootingButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                        ret2.style.backgroundColor = "#494949";
+                                                        ret3.style.backgroundColor = "#494949";
+                                                        ret4.style.backgroundColor = "#494949";
+                                                        ret5.style.backgroundColor = "#494949";
+                                                        ret6.style.backgroundColor = "#494949";
+                                                        ret7.style.backgroundColor = "#313131";
+                                                        ret8.style.backgroundColor = "#494949";
+                                                        } else{
+                                                        ret1.style.backgroundColor = "#E5E5E5";
+                                                        ret2.style.backgroundColor = "#E5E5E5";
+                                                        ret3.style.backgroundColor = "#E5E5E5";
+                                                        ret4.style.backgroundColor = "#E5E5E5";
+                                                        ret5.style.backgroundColor = "#E5E5E5";
+                                                        ret6.style.backgroundColor = "#E5E5E5";
+                                                        ret7.style.backgroundColor = "#9146FF";
+                                                        ret8.style.backgroundColor = "#E5E5E5";
+                                                        }
+                                                    choicedGenre("category=shooter")});
 
 let racingButton = document.getElementById('racing-button');
-racingButton.addEventListener('click', function(){choicedGenre("category=racing")});
+racingButton.addEventListener('click', function(){if(temabranco == 0){ret1.style.backgroundColor = "#494949";
+                                                    ret2.style.backgroundColor = "#494949";
+                                                    ret3.style.backgroundColor = "#494949";
+                                                    ret4.style.backgroundColor = "#494949";
+                                                    ret5.style.backgroundColor = "#494949";
+                                                    ret6.style.backgroundColor = "#494949";
+                                                    ret7.style.backgroundColor = "#494949";
+                                                    ret8.style.backgroundColor = "#313131";
+                                                    } else{
+                                                    ret1.style.backgroundColor = "#E5E5E5";
+                                                    ret2.style.backgroundColor = "#E5E5E5";
+                                                    ret3.style.backgroundColor = "#E5E5E5";
+                                                    ret4.style.backgroundColor = "#E5E5E5";
+                                                    ret5.style.backgroundColor = "#E5E5E5";
+                                                    ret6.style.backgroundColor = "#E5E5E5";
+                                                    ret7.style.backgroundColor = "#E5E5E5";
+                                                    ret8.style.backgroundColor = "#9146FF";
+                                                    }
+                                                choicedGenre("category=racing")});
 
 let maisButton = document.getElementById('mais');
 maisButton.addEventListener('click',function(){lerApi2(choicedTeste)})
@@ -82,8 +266,24 @@ let night = document.getElementById('night');
 night.style.display = "block";
 day.style.display = "none";
 
+
+let ret1 = document.getElementById("ret1");
+let ret2 = document.getElementById("ret2");
+let ret3 = document.getElementById("ret3");
+let ret4 = document.getElementById("ret4");
+let ret5 = document.getElementById("ret5");
+let ret6 = document.getElementById("ret6");
+let ret7 = document.getElementById("ret7");
+let ret8 = document.getElementById("ret8");
+let ret9 = document.getElementById("ret9");
+let ret10 = document.getElementById("ret10");
+let ret11 = document.getElementById("ret11");
+let ret12 = document.getElementById("ret12");
+
+
+
 function mudaTema(){
-    alert("tema funcionou?");
+    
 
     if(temabranco == 0){
     //document.body.style.setProperty('--color', 'green');
@@ -93,7 +293,19 @@ function mudaTema(){
     night.style.display = "none";
     day.style.display = "block";
     
+    ret9.style.backgroundColor = "#E5E5E5";
+    ret10.style.backgroundColor = "#E5E5E5";
+    ret11.style.backgroundColor = "#E5E5E5";
+    ret12.style.backgroundColor = "#E5E5E5";
 
+    ret1.style.backgroundColor = "#E5E5E5";
+    ret2.style.backgroundColor = "#E5E5E5";
+    ret3.style.backgroundColor = "#E5E5E5";
+    ret4.style.backgroundColor = "#E5E5E5";
+    ret5.style.backgroundColor = "#E5E5E5";
+    ret6.style.backgroundColor = "#E5E5E5";
+    ret7.style.backgroundColor = "#E5E5E5";
+    ret8.style.backgroundColor = "#E5E5E5";
 
     temabranco = 1;
     }
@@ -104,9 +316,23 @@ function mudaTema(){
     document.body.style.setProperty('--var-branco', 'white');
     night.style.display = "block";
     day.style.display = "none";
+
+    ret9.style.backgroundColor = "#494949";
+    ret10.style.backgroundColor = "#494949";
+    ret11.style.backgroundColor = "#494949";
+    ret12.style.backgroundColor = "#494949";
+
+    ret1.style.backgroundColor = "#494949";
+    ret2.style.backgroundColor = "#494949";
+    ret3.style.backgroundColor = "#494949";
+    ret4.style.backgroundColor = "#494949";
+    ret5.style.backgroundColor = "#494949";
+    ret6.style.backgroundColor = "#494949";
+    ret7.style.backgroundColor = "#494949";
+    ret8.style.backgroundColor = "#494949";
+
+
     temabranco = 0;
-
-
 
     }
     
