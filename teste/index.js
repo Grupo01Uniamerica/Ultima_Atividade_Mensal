@@ -12,6 +12,7 @@ let counter = 0;
 let JOGOS;
 let array = [];
 let numFav;
+let x = 1;
 var arrayFavoritos = localStorage.getItem("favoritos");
 if( arrayFavoritos != null){
  array = JSON.parse(arrayFavoritos);
@@ -34,8 +35,8 @@ browserButton.addEventListener('click',function(){choicedPlat("platform=browser&
 let allButton = document.getElementById('all-button');
 allButton.addEventListener('click',function(){choicedPlat("platform=all&")})
 
-let favbutton = document.getElementById('fav-buttonn');
-allButton.addEventListener('click',favoritos());
+let favbutton = document.getElementById('fav-button');
+favbutton.addEventListener('click',function(){favoritados()});
 
 
 
@@ -66,10 +67,11 @@ racingButton.addEventListener('click', function(){choicedGenre("category=racing"
 let maisButton = document.getElementById('mais');
 maisButton.addEventListener('click',function(){lerApi2(choicedTeste)})
 
-
+let destaque = document.getElementById('h2');
+let jgdesq = document.getElementById('destq');
 
 function choicedPlat(selectedPlat){
-
+    x=1;
     counter = 0;
     choicedPlataform = selectedPlat;
     choicedTeste = choicedPlataform + choicedUrl;
@@ -78,10 +80,18 @@ function choicedPlat(selectedPlat){
 }
 
 function choicedGenre(selectedGenre) {
+    x=1;
     counter = 0;
     choicedUrl = selectedGenre;
     choicedTeste = choicedPlataform + choicedUrl;
     lerApi(choicedTeste);
+}
+function favoritados (){
+
+   
+    x=0;
+    banner(null, true);
+
 }
 
 function lerApi(choicedTeste){
@@ -97,6 +107,7 @@ fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTes
 
 }
 
+
 function lerApi2(choicedTeste){
 fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTeste}`, options)
 	.then(response => response.json())
@@ -107,10 +118,14 @@ fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTes
 function favoritar(i){
     
     data = JOGOS;
-
+    let idstar = document.getElementById("estrela"+i);
     for(let a = 0; a < array.length; a++){
 
         if(data[i].id== array[a].id){
+
+            array.splice(array.indexOf(i), 1);
+            idstar.classList.remove('stars');
+
 
             return;
         }
@@ -118,9 +133,13 @@ function favoritar(i){
 
 
     }
-   
 
-    alert('bomdia' + i);
+    
+
+    console.log(idstar);
+
+    idstar.classList.add('stars');
+
 
     
     let jogos = adicionar(i, data);
@@ -128,7 +147,7 @@ function favoritar(i){
 
    
     
-    favoritos();
+    
 
 
 }
@@ -138,12 +157,14 @@ function adiciona_jogos(jogos){
     array.push(jogos);
     numFav++;
 
-
+    
     
 
     localStorage.setItem("favoritos",JSON.stringify(array));
+
  
-    alert("morri");
+  
+    
 }
 function adicionar(i, data){
      let jogos = {}
@@ -152,16 +173,23 @@ function adicionar(i, data){
     jogos.nome = data[i].title;
     jogos.url = data[i].freetogame_profile_url;
     jogos.img = data[i].thumbnail; 
+
+
    
-    
-   
+   //let aa= "estrela"+ toString(i);
+ 
     return jogos;
 }
 
 
 function favoritos(){
-
+    
+    jgdesq.style.display = "none";
+    destaque.style.display = "none";
+    maisButton.style.display = "none";
+  
     console.log(array);
+    cards.innerHTML= "";
 
        for(let i = 0; i < array.length; i++){
 
@@ -175,10 +203,11 @@ function favoritos(){
         <div id="flex">
         <h1 id="nome${i}">${array[i].nome}</h1> 
         </a>
-        <a class="estrela" id= ${i} onclick="favoritar(${i})">☆</a>
-        </a>
+        
         </div>
         `
+
+        
 
 
         cards.appendChild(article);
@@ -190,28 +219,43 @@ function favoritos(){
 }
 
 
-function banner(data){
- 
-    for ( i = counter; i < counter + 9; i++){
-        let article = document.createElement('article');
-        article.className = "tes"
-        article.innerHTML = `  
-        
-        
-        <a  href=${data[i].freetogame_profile_url} target="_blank">
-        <img id="img${i}"src="${data[i].thumbnail}">
-        <div id="flex">
-        <h1 id="txt${i}">${data[i].title}</h1> 
-        </a>
-        <a class="estrela" id= ${i} onclick="favoritar(${i})">☆</a>
-        </a>
-        </div>
-        `
+function banner(data, fav=false){
+    
+
+    
+    if(!fav){
+    
+         
+    jgdesq.style.display = "block";
+    destaque.style.display = "block";
+    maisButton.style.display = "block";
+
+        for ( i = counter; i < counter + 9; i++){
+            let article = document.createElement('article');
+            article.className = "tes"
+            article.innerHTML = `  
+            
+            
+            <a  href=${data[i].freetogame_profile_url} target="_blank">
+            <img id="img${i}"src="${data[i].thumbnail}">
+            <div id="flex">
+            <h1 id="txt${i}">${data[i].title}</h1> 
+            </a>
+            <a class="star" id= "estrela${i}" onclick="favoritar(${i})">☆</a>
+            </a>
+            </div>
+            `
 
 
-        cards.appendChild(article);
+            cards.appendChild(article);
+        }
+        counter+=10;
     }
-    counter+=10;
+    else{
+        
+        favoritos();
+    }
+   
 }
 
 
