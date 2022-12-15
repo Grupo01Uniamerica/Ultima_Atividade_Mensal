@@ -6,9 +6,12 @@ const options = {
 	}
 };
 
+let body = document.getElementById('body');
 let cards = document.getElementById('cards');
 let counter = 0;
 
+
+let temabranco = 0;
 let JOGOS;
 let array = [];
 let numFav;
@@ -37,6 +40,9 @@ allButton.addEventListener('click',function(){choicedPlat("platform=all&")})
 
 let favbutton = document.getElementById('fav-button');
 favbutton.addEventListener('click',function(){favoritados()});
+
+let tema = document.getElementById('tema');
+tema.addEventListener('click', function(){mudaTema()});
 
 
 
@@ -67,8 +73,49 @@ racingButton.addEventListener('click', function(){choicedGenre("category=racing"
 let maisButton = document.getElementById('mais');
 maisButton.addEventListener('click',function(){lerApi2(choicedTeste)})
 
+let destaque = document.getElementById('h2');
+let jgdesq = document.getElementById('destq');
 
 
+let day = document.getElementById('day');
+let night = document.getElementById('night');
+night.style.display = "block";
+day.style.display = "none";
+
+function mudaTema(){
+    alert("tema funcionou?");
+
+    if(temabranco == 0){
+    //document.body.style.setProperty('--color', 'green');
+    document.body.style.setProperty('--var-primarycolor', '#E5E5E5');
+    document.body.style.setProperty('--var-secondarycolor', '#9146FF');
+    document.body.style.setProperty('--var-branco', 'black');
+    night.style.display = "none";
+    day.style.display = "block";
+    
+
+
+    temabranco = 1;
+    }
+    else{
+
+    document.body.style.setProperty('--var-primarycolor', '#494949');
+    document.body.style.setProperty('--var-secondarycolor', '#313131');
+    document.body.style.setProperty('--var-branco', 'white');
+    night.style.display = "block";
+    day.style.display = "none";
+    temabranco = 0;
+
+
+
+    }
+    
+    
+    //body.classList.add('temabranco');
+    
+
+
+}
 function choicedPlat(selectedPlat){
     x=1;
     counter = 0;
@@ -87,6 +134,7 @@ function choicedGenre(selectedGenre) {
 }
 function favoritados (){
 
+   
     x=0;
     banner(null, true);
 
@@ -116,10 +164,14 @@ fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?${choicedTes
 function favoritar(i){
     
     data = JOGOS;
-
+    let idstar = document.getElementById("estrela"+i);
     for(let a = 0; a < array.length; a++){
 
         if(data[i].id== array[a].id){
+
+            array.splice(array.indexOf(i), 1);
+            idstar.classList.remove('stars');
+
 
             return;
         }
@@ -127,9 +179,13 @@ function favoritar(i){
 
 
     }
-   
 
-    alert('bomdia' + i);
+    
+
+    console.log(idstar);
+
+    idstar.classList.add('stars');
+
 
     
     let jogos = adicionar(i, data);
@@ -147,13 +203,13 @@ function adiciona_jogos(jogos){
     array.push(jogos);
     numFav++;
 
-
+    
     
 
     localStorage.setItem("favoritos",JSON.stringify(array));
 
  
-    alert("morri");
+  
     
 }
 function adicionar(i, data){
@@ -163,16 +219,21 @@ function adicionar(i, data){
     jogos.nome = data[i].title;
     jogos.url = data[i].freetogame_profile_url;
     jogos.img = data[i].thumbnail; 
+
+
    
-    
-   
+   //let aa= "estrela"+ toString(i);
+ 
     return jogos;
 }
 
 
 function favoritos(){
     
-
+    jgdesq.style.display = "none";
+    destaque.style.display = "none";
+    maisButton.style.display = "none";
+  
     console.log(array);
     cards.innerHTML= "";
 
@@ -188,10 +249,11 @@ function favoritos(){
         <div id="flex">
         <h1 id="nome${i}">${array[i].nome}</h1> 
         </a>
-        <a class="estrela" id= ${i} onclick="favoritar(${i})">☆</a>
-        </a>
+        
         </div>
         `
+
+        
 
 
         cards.appendChild(article);
@@ -208,6 +270,11 @@ function banner(data, fav=false){
 
     
     if(!fav){
+    
+         
+    jgdesq.style.display = "block";
+    destaque.style.display = "block";
+    maisButton.style.display = "block";
 
         for ( i = counter; i < counter + 9; i++){
             let article = document.createElement('article');
@@ -220,7 +287,7 @@ function banner(data, fav=false){
             <div id="flex">
             <h1 id="txt${i}">${data[i].title}</h1> 
             </a>
-            <a class="estrela" id= ${i} onclick="favoritar(${i})">☆</a>
+            <a class="star" id= "estrela${i}" onclick="favoritar(${i})">☆</a>
             </a>
             </div>
             `
