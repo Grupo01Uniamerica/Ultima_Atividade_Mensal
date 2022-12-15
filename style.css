@@ -4,6 +4,8 @@ body{
     --var-primarycolor: #494949;
     --var-secondarycolor: #313131;
     --var-branco: white;
+
+    --var-cor:rgba(239, 182, 253, 0.959) ;
     
 
 
@@ -36,7 +38,19 @@ header {
     align-items: center;
     width: 10.5vw;
     position: relative;
-    right: 20%;
+    top: 2vh;
+    right: 0%;
+    
+}
+#logo1 {
+    display: flex;
+    align-items: center;
+    width: 10.5vw;
+    position: relative;
+    bottom:4vh;
+    left: 30%;
+    margin-right: 250px;
+   
 }
 #logo:hover{
     transition: all 0.5s;
@@ -138,10 +152,18 @@ main section {
 }
 #destq{
 
-position: relative;
-top: 31.5%;
-left: 20%;
-font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    font-size: 2.5vw;
+    background-color: var(--var-primarycolor);
+    position: relative;
+    top: 32%;
+    left: 40%;
+    color: var(--var-branco);
+    border-radius: 5px;
+
 
 
 }
@@ -246,13 +268,14 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32%;
-    font-size: 3vw;
+    width: 25%;
+    font-size: 2.5vw;
     background-color: var(--var-primarycolor);
     position: relative;
-    bottom: -4%;
-    left: 20%;
+    bottom: -5%;
+    left: 37%;
     color: var(--var-branco);
+    border-radius: 5px;
 
 }
 h3{
@@ -279,7 +302,9 @@ footer {
 #mais{
     display: flex;
     position: relative;
-    left: 31vw;
+    padding-left: 70px;
+    padding-top: 10px;
+    left: 30vw;
     margin: 20px;
     align-items: center;
     justify-content: center;
@@ -353,10 +378,10 @@ p{
 }
 
 #day{
-    width: 12%;
+    width: 20%;
 }
 #night{
-    width: 12%;
+    width: 20%;
 }
 .temabranco{
 
